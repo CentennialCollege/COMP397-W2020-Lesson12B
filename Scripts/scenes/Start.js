@@ -31,18 +31,23 @@ var scenes;
             // buttons
             this._startButton = new objects.Button("startButton", 320, 430, true);
             this._ocean = new objects.Ocean();
+            this._particle = new objects.Particle(enums.ParticleShape.SQUARE, 20);
+            this._particle.x = 100;
+            this._particle.y = 100;
             this.Main();
         };
         Start.prototype.Update = function () {
             this._ocean.Update();
+            this._particle.Update();
         };
         Start.prototype.Main = function () {
-            this.addChild(this._ocean);
-            this.addChild(this._welcomeLabel);
-            this.addChild(this._startButton);
+            //this.addChild(this._ocean);
+            //this.addChild(this._welcomeLabel);
+            //this.addChild(this._startButton);
             this._startButton.on("click", function () {
                 config.Game.SCENE = scenes.State.PLAY;
             });
+            this.addChild(this._particle);
         };
         Start.prototype.Clean = function () {
             this.removeAllChildren();

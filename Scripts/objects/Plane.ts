@@ -65,6 +65,7 @@ module objects
             this._engineSound.volume = 0.1; // 10% volume
             this._horizontalSpeed = 10;
             this.position = new objects.Vector2(config.Game.SCREEN_WIDTH * 0.5, this._verticalPosition);
+
         }
 
         public Update(): void 
